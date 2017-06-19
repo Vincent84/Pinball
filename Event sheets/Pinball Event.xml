@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Pinball Event</name>
+    <events>
+        <variable constant="0" name="Highscore" sid="172606043759641" static="0" type="number">0</variable>
+        <variable constant="0" name="CardRight" sid="897258981415721" static="0" type="number">0</variable>
+        <variable constant="0" name="CardLeft" sid="362301603270691" static="0" type="number">0</variable>
+        <variable constant="0" name="Score" sid="726206622427258" static="0" type="number">0</variable>
+        <variable constant="0" name="LightOn" sid="634116303552780" static="0" type="number">0</variable>
+        <variable constant="0" name="Multiplier" sid="737085991183201" static="0" type="number">1</variable>
+        <variable constant="0" name="Players" sid="661376726975109" static="0" type="number">1</variable>
+        <variable constant="0" name="Balls" sid="369124727129263" static="0" type="number">1</variable>
+        <event-block sid="873423241978845">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="648477420010947" type="System" />
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="674298679514712" type="Hole" />
+                <action id="2" name="Stop" sid="995533944350573" type="x2" />
+                <action id="2" name="Stop" sid="482136141595911" type="x4" />
+                <action id="2" name="Stop" sid="785606705191372" type="x6" />
+                <action id="2" name="Stop" sid="441252094033962" type="x8" />
+                <action id="2" name="Stop" sid="995456033799679" type="x10" />
+                <action id="-12" name="Set group active" sid="756236594113271" type="System">
+                    <param id="0" name="Group name">&quot;Controls&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="423179600692105">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="149278630536715" type="Paddle">
+                            <param id="0" name="Animation">&quot;Mirror&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="22" name="Create limited revolute joint" sid="624195114920386" type="Paddle">
+                            <param id="0" name="This image point">1</param>
+                            <param id="1" name="Object">JointLeft</param>
+                            <param id="2" name="Lower angle">0</param>
+                            <param id="3" name="Upper angle">45</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="401816699584712">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="577804348357646" type="Paddle">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="22" name="Create limited revolute joint" sid="875754827208479" type="Paddle">
+                            <param id="0" name="This image point">1</param>
+                            <param id="1" name="Object">JointRight</param>
+                            <param id="2" name="Lower angle">-45</param>
+                            <param id="3" name="Upper angle">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="370061996114928">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="350339975399761" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="270906076326292" type="Text">
+                    <param id="0" name="Text">Light.On</param>
+                </action>
+                <action id="0" name="Set text" sid="472514502135069" type="Score">
+                    <param id="0" name="Text">&quot;Score: &quot;&amp;Score</param>
+                </action>
+                <action id="0" name="Set text" sid="941136564228777" type="BallText">
+                    <param id="0" name="Text">&quot;Ball: &quot;&amp;Balls&amp;&quot;/3&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="464102773818193" type="Highscore">
+                    <param id="0" name="Text">&quot;Highscore: &quot;&amp;Highscore</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="397836121536773">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="751008261790405" type="Paddle">
+                            <param id="0" name="Animation">&quot;Mirror&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="3" name="Apply impulse" sid="793385058535767" type="Paddle">
+                            <param id="0" name="Impulse X">0</param>
+                            <param id="1" name="Implulse Y">1</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="982109902657752">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="902397912720714" type="Paddle">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="3" name="Apply impulse" sid="336465590567517" type="Paddle">
+                            <param id="0" name="Impulse X">0</param>
+                            <param id="1" name="Implulse Y">1</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="486319773782165">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="575903272433864" type="Keyboard">
+                    <param id="0" name="Key">82 (R)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="389993228011915" type="System" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="968298352381412" title="Controls">
+            <sub-events>
+                <event-block sid="351805960724508">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="862812777968832" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="365701077583122">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="378554748301228" type="Paddle">
+                                    <param id="0" name="Animation">&quot;Mirror&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Physics" id="3" name="Apply impulse" sid="226850486973060" type="Paddle">
+                                    <param id="0" name="Impulse X">0</param>
+                                    <param id="1" name="Implulse Y">-10</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                                <action behavior="Physics" id="9" name="Set angular velocity" sid="586557389973229" type="Paddle">
+                                    <param id="0" name="Angular velocity">-1000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="476122308638683">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="532110600609795" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="126227415078589">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="210039819416208" type="Paddle">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Physics" id="3" name="Apply impulse" sid="219133371795601" type="Paddle">
+                                    <param id="0" name="Impulse X">0</param>
+                                    <param id="1" name="Implulse Y">-10</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                                <action behavior="Physics" id="9" name="Set angular velocity" sid="132611482432692" type="Paddle">
+                                    <param id="0" name="Angular velocity">1000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="510803233283436">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="400966604713131" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="872020867427341">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="891653686876619" type="System">
+                                    <param id="0" name="Interval (seconds)">0.02</param>
+                                </condition>
+                                <condition id="-6" name="Compare height" sid="598546298062089" type="Launcher">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Height">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Set height" sid="490028038597212" type="Launcher">
+                                    <param id="0" name="Height">Launcher.Height-10</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="181492962220281" type="Launcher">
+                                    <param id="0" name="Instance variable">isDown</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="962077186322660">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="156577720846326" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="335697709263453" type="Launcher">
+                            <param id="0" name="Instance variable">isDown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="593668009111491" type="Launcher">
+                            <param id="0" name="Instance variable">TempH</param>
+                            <param id="1" name="Value">Launcher.Height</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="327205036545857" type="Launcher">
+                            <param id="0" name="Height">Self.SpriteH</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="129941375341102">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="924251329219535" type="Launcher">
+                            <param id="0" name="Object">SolidLauncher</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="986799768334631" type="Launcher">
+                            <param id="0" name="Instance variable">isDown</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="149530808706675" type="Ball">
+                            <param id="0" name="Object">TriggerLaunch</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="3" name="Apply impulse" sid="180427955450178" type="Ball">
+                            <param id="0" name="Impulse X">0</param>
+                            <param id="1" name="Implulse Y">-10</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="382914755003668" type="Launcher">
+                            <param id="0" name="Instance variable">isDown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="310190796963394">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="636129103492832" type="Ball">
+                            <param id="0" name="Object">CloseLauncher</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="340788265710953" type="CloseLauncher">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="850771836710493" type="CloseLauncher">
+                            <param id="0" name="Instance variable">Closed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="473768209089819" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="956487264716637" type="CloseLauncher">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="485997552280696">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="418459094817306" type="Ball">
+                            <param id="0" name="Object">TriggerLight</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="413215285602803">
+                            <conditions>
+                                <condition id="-15" name="Pick nearest/furthest" sid="547509665872910" type="Light">
+                                    <param id="0" name="Which">0</param>
+                                    <param id="1" name="X">TriggerLight.X</param>
+                                    <param id="2" name="Y">TriggerLight.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="646348633549835">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="804611287493580" type="Light">
+                                            <param id="0" name="Instance variable">On</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="755798949342582" type="Light">
+                                            <param id="0" name="Instance variable">On</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="587857693570893" type="Light">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="102951391006367" type="System">
+                                            <param id="0" name="Variable">LightOn</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="677962215271733">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="915503856998647" type="System" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="836446502440457" type="Light">
+                                            <param id="0" name="Instance variable">On</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="897630088645695" type="Light">
+                                            <param id="0" name="Instance variable">On</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="943849262768137" type="Light">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="640939998157470" type="System">
+                                            <param id="0" name="Variable">LightOn</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="553251292405889">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="107545717106171" type="Ball">
+                            <param id="0" name="Object">Bumper</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Start" sid="516635076164038" type="Bumper">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="552652338153256" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">Bumper.Point*Multiplier</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="458307982936468">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="157892326013235" type="Bumper">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="884209969566031" type="Bumper" />
+                        <action id="5" name="Set frame" sid="695629273339348" type="Bumper">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="108483899178439">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="984054293924669" type="Hole">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="334988062480358" type="Hole" />
+                        <action id="5" name="Set frame" sid="295810219315442" type="Hole">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="424916959269067">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="223074776870338" type="Ball">
+                            <param id="0" name="Object">Hole</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="320789020738849" type="Hole">
+                            <param id="0" name="Instance variable">Active</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Start" sid="764829069379848" type="Hole">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="269840571136799" type="Hole">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="580875775123544" type="Ball">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="225805817852115" type="Ball">
+                            <param id="0" name="Object">Hole</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="737056284656259" type="System">
+                            <param id="0" name="Seconds">2.0</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="318562315606488" type="Ball">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action behavior="Physics" id="3" name="Apply impulse" sid="213772941011276" type="Ball">
+                            <param id="0" name="Impulse X">0</param>
+                            <param id="1" name="Implulse Y">-10</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="302903351137717" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">Hole.Point * Multiplier</param>
+                        </action>
+                        <action id="2" name="Stop" sid="933995653490745" type="Hole" />
+                        <action id="-16" name="Wait" sid="411369525339262" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="272332487233853" type="Hole">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="603094355491386">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="459305856021898" type="System">
+                            <param id="0" name="Variable">LightOn</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="273521790288907" type="System">
+                            <param id="0" name="Variable">Multiplier</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="362362200555578" type="Function">
+                            <param id="0" name="Name">&quot;setMultiplier&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="6" name="Set speed" sid="262768361459852" type="Light">
+                            <param id="0" name="Speed">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="872912455986035" type="System">
+                            <param id="0" name="Variable">LightOn</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="390406673864239">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="548143802075904" type="Light">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="324273610244769" type="Light">
+                            <param id="0" name="Instance variable">On</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="976186104019773" type="Light">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="566250711595343">
+                    <conditions>
+                        <condition id="0" name="On function" sid="983542163384828" type="Function">
+                            <param id="0" name="Name">&quot;setMultiplier&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="946129293106315">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="752362202448585" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="590888206558419" type="x2">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="114501557367277" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="436286165483678" type="Light">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="699942570284631" type="Light">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="143466743560781">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="702765679082098" type="System" />
+                                <condition id="-14" name="Compare variable" sid="203632699683914" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="971365365404137" type="x2">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="798219157995479" type="x4">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="933166729827175" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="376321674170434" type="Light">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="124571458149846" type="Light">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="864843887634742">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="933774471397082" type="System" />
+                                <condition id="-14" name="Compare variable" sid="298709542981007" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="593326998754956" type="x4">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="576582064238607" type="x6">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="555793086281440" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Value">6</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="325109344671900" type="Light">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="797382105502595" type="Light">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="391820927658068">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="599415113751060" type="System" />
+                                <condition id="-14" name="Compare variable" sid="103336571825098" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="789566170569839" type="x6">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="406944553792539" type="x8">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="919205136440486" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Value">8</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="180737343721570" type="Light">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="664310418127538" type="Light">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="952147153268948">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="641035835461420" type="System" />
+                                <condition id="-14" name="Compare variable" sid="573513035512042" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="337773922341370" type="x8">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="349482273922953" type="x10">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="855570998373594" type="System">
+                                    <param id="0" name="Variable">Multiplier</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="283541865021165" type="Light">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="307233270728400" type="Light">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="830003437378498">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="826374268341839" type="Ball">
+                            <param id="0" name="Object">Card</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="623261070994505" type="Card">
+                            <param id="0" name="Instance variable">On</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="203407929851717" type="Card">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="914684732746287" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="577446614408281" type="Card">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="711657790557769" type="Card">
+                            <param id="0" name="Instance variable">On</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="548676232618137">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="386451713492970" type="Card">
+                                    <param id="0" name="Instance variable">Positon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;left&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="608084738829959" type="System">
+                                    <param id="0" name="Variable">CardLeft</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="661146736168872">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="832428825720489" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="486412353585740" type="Card">
+                                    <param id="0" name="Instance variable">Positon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;right&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="162323616390836" type="System">
+                                    <param id="0" name="Variable">CardRight</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="409526543657006">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="824245350235411" type="System">
+                            <param id="0" name="Variable">CardLeft</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="895081780123340" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">5000</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="949800768400132" type="System">
+                            <param id="0" name="Variable">CardLeft</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="853514107356134" type="CardLeftText">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">2.0</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="776347088713141" type="CardLeftText">
+                            <param id="0" name="Color">rgb(253, 79, 0)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="958963679309920" type="System">
+                            <param id="0" name="Seconds">2.0</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="120811295510084" type="CardLeftText">
+                            <param id="0" name="Color">rgb(0, 0, 0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="368462363158299">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="692790563305277" type="System">
+                                    <param id="0" name="Object">Card</param>
+                                    <param id="1" name="Expression">Card.Positon = &quot;left&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="116045803072072" type="Card">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="378887568429808" type="Card">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="246936169606031">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="216088025414793" type="System">
+                            <param id="0" name="Variable">CardRight</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="603864945324711" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">2500</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="259488931442141" type="System">
+                            <param id="0" name="Variable">CardRight</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="538798830434018" type="CardRightText">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">2.0</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="539587790186254" type="CardRightText">
+                            <param id="0" name="Color">rgb(253, 79, 0)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="178108420114392" type="System">
+                            <param id="0" name="Seconds">2.0</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="577825483949042" type="CardRightText">
+                            <param id="0" name="Color">rgb(0, 0, 0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="752058473128697">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="705690621403171" type="System">
+                                    <param id="0" name="Object">Card</param>
+                                    <param id="1" name="Expression">Card.Positon = &quot;right&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="492629921205688" type="Card">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="455559763190471" type="Card">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="281206018519373">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="663917188371579" type="Ball">
+                            <param id="0" name="Object">BallOut</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="138624017480402">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="806431865928782" type="System">
+                                    <param id="0" name="Variable">Balls</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="500523693122074" type="System">
+                                    <param id="0" name="Variable">Balls</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-26" name="Restart layout" sid="562897728571076" type="System" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="874945823526407">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="965061438287183" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="146614905763383">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="696769179099166" type="System">
+                                            <param id="0" name="Variable">Score</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">Highscore</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="892395265869713" type="System">
+                                            <param id="0" name="Variable">Highscore</param>
+                                            <param id="1" name="Value">Score</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="463194891659726" type="System">
+                                            <param id="0" name="Variable">Balls</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="774776931175764" type="System">
+                                            <param id="0" name="Variable">Score</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="695565372537264" type="System">
+                                            <param id="0" name="Variable">CardLeft</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="896736203915700" type="System">
+                                            <param id="0" name="Variable">CardRight</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="241262901939368" type="System">
+                                            <param id="0" name="Variable">LightOn</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="755306600508712" type="System">
+                                            <param id="0" name="Variable">Multiplier</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="893841547871999" type="NewRecord">
+                                            <param id="0" name="Text">&quot;Congratulations!&quot;&amp;newline&amp;&quot;You made a new record&quot;</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="748593587478556" type="NewRecord">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="517911362383888" type="Highscore">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="755971011931957" type="BallText">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="235630636839523" type="Score">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="968004140713966" type="Player">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="842276700475620" type="System">
+                                            <param id="0" name="Group name">&quot;Controls&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

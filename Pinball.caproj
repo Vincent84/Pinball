@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Pinball</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>1fdjoc6vhtjuo</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>752</width>
+        <height>1280</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Ball" sid="309245985158077">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="932345774809770">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="225040152615691">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="623626442841760" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.53125" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\ball2.png">
+                        <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        <collision-poly>
+                            <point x="0.155963" y="0.185185" />
+                            <point x="0.495413" y="0.0277778" />
+                            <point x="0.834862" y="0.185185" />
+                            <point x="0.954128" y="0.527778" />
+                            <point x="0.807339" y="0.842593" />
+                            <point x="0.495413" y="0.972222" />
+                            <point x="0.183486" y="0.842593" />
+                            <point x="0.0275229" y="0.527778" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Paddle" sid="474284895082720">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="135859695291087">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="502640120743367" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.515152" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\flipperdown.png">
+                        <image-point name="Imagepoint 1" x="0.833333" y="0.333333" />
+                        <image-point name="Imagepoint 2" x="-0.0833333" y="0.939394" />
+                        <collision-poly>
+                            <point x="0.00208333" y="0.719697" />
+                            <point x="0.7875" y="0.0606062" />
+                            <point x="0.9375" y="0.121212" />
+                            <point x="0.970833" y="0.424242" />
+                            <point x="0.870833" y="0.568182" />
+                            <point x="0" y="1" />
+                            <point x="0.00625" y="0.897727" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Mirror" pingpong="0" repeatcount="1" repeatto="0" sid="857440700779301" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.515152">
+                        <image-point name="Imagepoint 1" x="0.166667" y="0.333333" />
+                        <image-point name="Imagepoint 2" x="1.08333" y="0.939394" />
+                        <collision-poly>
+                            <point x="1" y="0.863636" />
+                            <point x="1" y="1" />
+                            <point x="0.129167" y="0.568182" />
+                            <point x="0.0291667" y="0.424242" />
+                            <point x="0.0625" y="0.121212" />
+                            <point x="0.2125" y="0.0606062" />
+                            <point x="1" y="0.719697" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bumper" sid="802062830149875">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Point" sid="331436326095574" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics" sid="973826289143930">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960348416842125" speed="8">
+                    <frame duration="1" hotspotX="0.504587" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\BumpB.png">
+                        <collision-poly>
+                            <point x="0.46789" y="0" />
+                            <point x="0.880734" y="0.134615" />
+                            <point x="0.990826" y="0.519232" />
+                            <point x="0.880734" y="0.846154" />
+                            <point x="0.522936" y="1" />
+                            <point x="0.100917" y="0.846154" />
+                            <point x="0" y="0.516827" />
+                            <point x="0.100917" y="0.134615" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.504587" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Bump1B.png">
+                        <collision-poly>
+                            <point x="0.46789" y="0" />
+                            <point x="0.880734" y="0.134615" />
+                            <point x="0.990826" y="0.519232" />
+                            <point x="0.880734" y="0.846154" />
+                            <point x="0.522936" y="1" />
+                            <point x="0.100917" y="0.846154" />
+                            <point x="0" y="0.516827" />
+                            <point x="0.100917" y="0.134615" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.504587" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Bump1.png">
+                        <collision-poly>
+                            <point x="0.46789" y="0" />
+                            <point x="0.880734" y="0.134615" />
+                            <point x="0.990826" y="0.519232" />
+                            <point x="0.880734" y="0.846154" />
+                            <point x="0.522936" y="1" />
+                            <point x="0.100917" y="0.846154" />
+                            <point x="0" y="0.516827" />
+                            <point x="0.100917" y="0.134615" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JointRight" sid="629904794749094">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="188658053396344">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="925036390451596" speed="5">
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.6" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="137031285930634">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="JointLeft" sid="133446749755807">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="370848735346548">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="676416488915453" speed="5">
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.6" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Launcher" sid="118211236472152">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="SpriteH" sid="938624285644855" type="number" />
+                <instance-variable name="isDown" sid="140217324406387" type="boolean" />
+                <instance-variable name="TempH" sid="188334706925146" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics" sid="258738707488240">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="324493294519994" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="Imagepoint 1" x="0.5" y="0" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ExternalLine" sid="796647873518105">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="658637943699328">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="969983143961659" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Vincenzo\Documents\TextureX Brushed Aluminum Metal Stock Aluminium Texture_150_cw150_ch150_thumb.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Curve" sid="587336314004446">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="322958212754999" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TriggerLaunch" sid="800130739758775">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="881455706363687" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SolidLauncher" sid="514452211668520">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="619791308887345">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="245191649351261" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CloseLauncher" sid="106501257862040">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Closed" sid="558407436166246" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics" sid="468323569097500">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="389840987134043" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\gate.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PaddleGuide" sid="936860480236924">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="841948023158128">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="994010869613809" speed="0">
+                    <frame duration="1" hotspotX="0.504202" hotspotY="0.504854" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Flapper_1.png">
+                        <collision-poly>
+                            <point x="0.00840336" y="0.00970874" />
+                            <point x="0.159664" y="0.320388" />
+                            <point x="0.840336" y="0.524272" />
+                            <point x="0.722689" y="0.854369" />
+                            <point x="0.0504203" y="0.407767" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Mirror" pingpong="0" repeatcount="1" repeatto="0" sid="582014591220220" speed="5">
+                    <frame duration="1" hotspotX="0.495798" hotspotY="0.504854">
+                        <collision-poly>
+                            <point x="0.983193" y="0.398059" />
+                            <point x="0.294118" y="0.864077" />
+                            <point x="0.151261" y="0.54369" />
+                            <point x="0.82353" y="0.330097" />
+                            <point x="0.983194" y="1.86265e-009" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tilemap" sid="705415999667491">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="Separator" sid="993754042952085">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="372522279538407">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="270797503978399" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\gate.png">
+                        <collision-poly>
+                            <point x="0.0272727" y="0.15" />
+                            <point x="0.5" y="0" />
+                            <point x="0.972727" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.972727" y="0.85" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0272727" y="0.85" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Hole" sid="621787900049030">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Active" sid="451246085180371" type="boolean" />
+                <instance-variable name="Point" sid="826748940748793" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="199053065398634" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\trap3.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.15625" />
+                            <point x="0.5" y="0.015625" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="0.984375" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="0.984375" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0.015625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\trap2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\trap1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Light" sid="439261054159751">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="On" sid="744425008080581" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="2" repeatto="0" sid="920214939120980" speed="0">
+                    <frame duration="1" hotspotX="0.509434" hotspotY="0.509804" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Light2.png">
+                        <collision-poly>
+                            <point x="0.150943" y="0.156863" />
+                            <point x="0.490566" y="0" />
+                            <point x="0.849057" y="0.156863" />
+                            <point x="1" y="0.490196" />
+                            <point x="0.849057" y="0.843137" />
+                            <point x="0.490566" y="1" />
+                            <point x="0.150943" y="0.843137" />
+                            <point x="0" y="0.490196" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.509434" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Light.png">
+                        <collision-poly>
+                            <point x="0.163636" y="0.169811" />
+                            <point x="0.490909" y="0.0188679" />
+                            <point x="0.836364" y="0.169811" />
+                            <point x="0.981818" y="0.490566" />
+                            <point x="0.836364" y="0.830189" />
+                            <point x="0.490909" y="0.981132" />
+                            <point x="0.163636" y="0.830189" />
+                            <point x="0.0181818" y="0.490566" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TriggerLight" sid="203630632406128">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="558274638543357" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Arrow" sid="245868128725597">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="648140842168916" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Arrow1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Arrow2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\PinballTemplate\PinballTemplate\Art_Pieces\Arrow3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="x2" sid="169608991869610">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="635018242891789" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\Muliplier2x.png">
+                        <collision-poly>
+                            <point x="0.169922" y="0.169922" />
+                            <point x="0.5" y="0.0332031" />
+                            <point x="0.826172" y="0.173828" />
+                            <point x="0.964844" y="0.5" />
+                            <point x="0.830078" y="0.830078" />
+                            <point x="0.5" y="0.970703" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.0332031" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\Muliplier2x.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="x4" sid="555089168114500">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="806192449188081" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\MultiplierX4.png">
+                        <collision-poly>
+                            <point x="0.169922" y="0.169922" />
+                            <point x="0.5" y="0.0351563" />
+                            <point x="0.826172" y="0.173828" />
+                            <point x="0.970703" y="0.5" />
+                            <point x="0.835938" y="0.835938" />
+                            <point x="0.5" y="0.978516" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\MultiplierX4.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="x6" sid="646332480472360">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="371840549972379" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\MultiplierX6.png">
+                        <collision-poly>
+                            <point x="0.169922" y="0.169922" />
+                            <point x="0.5" y="0.0351563" />
+                            <point x="0.826172" y="0.173828" />
+                            <point x="0.970703" y="0.5" />
+                            <point x="0.835938" y="0.835938" />
+                            <point x="0.5" y="0.978516" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\MultiplierX6.png">
+                        <collision-poly>
+                            <point x="0.169922" y="0.169922" />
+                            <point x="0.5" y="0.0351563" />
+                            <point x="0.826172" y="0.173828" />
+                            <point x="0.970703" y="0.5" />
+                            <point x="0.835938" y="0.835938" />
+                            <point x="0.5" y="0.978516" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="x8" sid="766744143882106">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="502948196019061" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\MultiplierX8.png">
+                        <collision-poly>
+                            <point x="0.169922" y="0.169922" />
+                            <point x="0.5" y="0.0351563" />
+                            <point x="0.826172" y="0.173828" />
+                            <point x="0.970703" y="0.5" />
+                            <point x="0.835938" y="0.835938" />
+                            <point x="0.5" y="0.978516" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\MultiplierX8.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="x10" sid="572042545862575">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="845812816178540" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\Pinball Spritepack 1a\Pinball Spritepack 1a\Multiplier10x.png">
+                        <collision-poly>
+                            <point x="0.169922" y="0.169922" />
+                            <point x="0.5" y="0.0332031" />
+                            <point x="0.826172" y="0.173828" />
+                            <point x="0.964844" y="0.5" />
+                            <point x="0.830078" y="0.830078" />
+                            <point x="0.5" y="0.970703" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.0332031" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.169922" y="0.169922" />
+                            <point x="0.5" y="0.0332031" />
+                            <point x="0.826172" y="0.173828" />
+                            <point x="0.964844" y="0.5" />
+                            <point x="0.830078" y="0.830078" />
+                            <point x="0.5" y="0.970703" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.0332031" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="433886099239402">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Text" sid="262338478073674">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ExternalCurve" sid="756540569606672">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="606380830617586">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="922071601989946" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Documents\filled-circle_icon-icons.com_72757.png">
+                        <collision-poly>
+                            <point x="0.14786" y="0.14786" />
+                            <point x="0.5" y="0.00194553" />
+                            <point x="0.85214" y="0.14786" />
+                            <point x="0.998055" y="0.5" />
+                            <point x="0.85214" y="0.85214" />
+                            <point x="0.5" y="0.998055" />
+                            <point x="0.14786" y="0.85214" />
+                            <point x="0.00194553" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Player" sid="352706395537842">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Score" sid="377090910639627">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Card" sid="596442585283566">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="On" sid="425769789446608" type="boolean" />
+                <instance-variable name="Positon" sid="179096862871416" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="427048570092973">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="475332389590761" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LogoDBGA" sid="257211924340902">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="211873922606409" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Desktop\DBGA_logo.png">
+                        <collision-poly>
+                            <point x="0.0538462" y="0.212121" />
+                            <point x="0.5" y="0.0454545" />
+                            <point x="0.965385" y="0.136364" />
+                            <point x="0.480769" y="0.5" />
+                            <point x="0.973077" y="0.893939" />
+                            <point x="0.5" y="0.893939" />
+                            <point x="0.0538462" y="0.787879" />
+                            <point x="0.0192308" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mario" sid="359709333582012">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="752236862981030" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Desktop\Mario_New_Super_Mario_Bros._2.png">
+                        <collision-poly>
+                            <point x="0.210265" y="0.16851" />
+                            <point x="0.5" y="0.0685537" />
+                            <point x="0.615342" y="0.308271" />
+                            <point x="0.945364" y="0.499779" />
+                            <point x="0.625828" y="0.700133" />
+                            <point x="0.5" y="0.844759" />
+                            <point x="0.257726" y="0.793454" />
+                            <point x="0.084989" y="0.499779" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Pacman" sid="653328518588750">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="645785928041663" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Desktop\Pac_Man.svg.png">
+                        <collision-poly>
+                            <point x="0.170091" y="0.145508" />
+                            <point x="0.5" y="0.00683594" />
+                            <point x="0.894977" y="0.0898438" />
+                            <point x="0.598173" y="0.5" />
+                            <point x="0.880137" y="0.897461" />
+                            <point x="0.5" y="0.97168" />
+                            <point x="0.182648" y="0.84375" />
+                            <point x="0.00342466" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Guybrush" sid="768124605232641">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="885754265391333" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Desktop\guybrush_still_down.gif">
+                        <collision-poly>
+                            <point x="0.21875" y="0.145228" />
+                            <point x="0.5" y="0.0746888" />
+                            <point x="0.625" y="0.248963" />
+                            <point x="0.78125" y="0.497925" />
+                            <point x="0.75" y="0.834025" />
+                            <point x="0.5" y="0.759336" />
+                            <point x="0.2" y="0.86722" />
+                            <point x="0.04375" y="0.497925" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Crash" sid="891403073678313">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="821266646495277" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Desktop\N._Sane_Trilogy_Crash_Bandicoot.png">
+                        <collision-poly>
+                            <point x="0.305136" y="0.197266" />
+                            <point x="0.5" y="0.105469" />
+                            <point x="0.814199" y="0.120117" />
+                            <point x="0.581571" y="0.5" />
+                            <point x="0.664653" y="0.783203" />
+                            <point x="0.5" y="0.671875" />
+                            <point x="0.135952" y="0.912109" />
+                            <point x="0.0740181" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Nathan" sid="566464196454385">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="504761194664424" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Vincenzo\Desktop\Nathan_Drake_2.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.002886" />
+                            <point x="0.662791" y="0.125541" />
+                            <point x="0.968992" y="0.499278" />
+                            <point x="0.662791" y="0.874459" />
+                            <point x="0.5" y="0.98557" />
+                            <point x="0.120155" y="0.955267" />
+                            <point x="0.0116279" y="0.499278" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Kratos" sid="375038442210342">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="871425214784028" speed="5">
+                    <frame duration="1" hotspotX="0.504762" hotspotY="0.5" original-source="C:\Users\Vincenzo\Desktop\Kratos.png">
+                        <collision-poly>
+                            <point x="0.27673" y="0.20625" />
+                            <point x="0.498952" y="0.00625" />
+                            <point x="0.712788" y="0.214062" />
+                            <point x="0.932914" y="0.5" />
+                            <point x="0.916143" y="0.9375" />
+                            <point x="0.498952" y="1" />
+                            <point x="0.134172" y="0.9" />
+                            <point x="0.0419287" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BallText" sid="497214446379456">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BallOut" sid="560032909118814">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="809561055353751" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GameOver" sid="904879225404628">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="934094077197766" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Highscore" sid="153589513653870">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite" sid="211182338609451">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="455875577178278" speed="5">
+                    <frame duration="1" hotspotX="0.501916" hotspotY="0.617647" original-source="C:\Users\Vincenzo\Desktop\universal-pinball-denver.png">
+                        <collision-poly>
+                            <point x="0.0881226" y="0.194118" />
+                            <point x="0.501916" y="0.123529" />
+                            <point x="0.911877" y="0.2" />
+                            <point x="0.977012" y="0.617647" />
+                            <point x="0.900383" y="1" />
+                            <point x="0.501916" y="0.988235" />
+                            <point x="0.0996169" y="1" />
+                            <point x="0.0268199" y="0.617647" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StartOptions" sid="769719193473530">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text2" sid="306598064020471">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Fireworks" sid="580465374548189">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="8" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="138640114397841" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506667" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506667" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506667" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506667" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506667" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="NewRecord" sid="115652704023680">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="CardLeftText" sid="748955458741147">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="167890766944694">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="CardRightText" sid="525107192173697">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="723970802013090">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Pinball 1.xml</layout>
+        <layout>Debug.xml</layout>
+        <layout>Start.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Pinball Event.xml</event-sheet>
+        <event-sheet>Start Event.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="8" />
+        <global-instance type="Function" uid="68" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Start Event</name>
+    <events>
+        <event-block sid="949999702377901">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="582392339883026" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="102382869779689" type="StartOptions">
+                    <param id="0" name="Text">&quot;Press Space to Start&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="970136219414366" type="Text2">
+                    <param id="0" name="Text">&quot;Use → and ← to move the paddles&quot;&amp;newline&amp;&quot;Press ↓ to launch the ball&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="439855094772019">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="745167883872993" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="776045739327336" type="System">
+                    <param id="0" name="Layout">Pinball 1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
